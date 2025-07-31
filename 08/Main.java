@@ -1,20 +1,15 @@
 
 import java.io.*;
 
+
 public class Main {
   public static void main(String[] args) throws IOException {
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
       BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
       String line = br.readLine();
-      String[] parts = line.split(" ");
-      int A = Integer.parseInt(parts[0]);
-      int B = Integer.parseInt(parts[1]);
-      int C = Integer.parseInt(parts[2]);
-      bw.write((A+B)%C+ "\n");
-      bw.write(((A%C) + (B%C))%C+ "\n");
-      bw.write((A*B)%C+ "\n");
-      bw.write(((A%C) * (B%C))%C+ "\n");
-      
+      int a = Integer.parseInt(line);
+      int b = 543;
+      bw.write(a-b+ "");
       bw.flush(); 
       br.close(); 
       bw.close();

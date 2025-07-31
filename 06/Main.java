@@ -6,18 +6,16 @@ public class Main {
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
       BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
       String line = br.readLine();
-      String[] parts = line.split(" ");
-      int A = Integer.parseInt(parts[0]);
-      int B = Integer.parseInt(parts[1]);
-      int C = Integer.parseInt(parts[2]);
-      bw.write((A+B)%C+ "\n");
-      bw.write(((A%C) + (B%C))%C+ "\n");
-      bw.write((A*B)%C+ "\n");
-      bw.write(((A%C) * (B%C))%C+ "\n");
-      
+      String[] parts = line.split(" "); 
+      int a = Integer.parseInt(parts[0]); 
+      int b = Integer.parseInt(parts[1]); 
+      bw.write(a + b + ""+ "\n"); 
+      bw.write(a - b + ""+ "\n"); 
+      bw.write(a * b + ""+ "\n"); 
+      bw.write(a / b + ""+ "\n"); 
+      bw.write(a % b + ""+ "\n"); // 몫이 아닌 나머지를 뽑고 싶을 때
       bw.flush(); 
       br.close(); 
       bw.close();
   }
 }
-

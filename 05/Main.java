@@ -6,18 +6,12 @@ public class Main {
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
       BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
       String line = br.readLine();
-      String[] parts = line.split(" ");
-      int A = Integer.parseInt(parts[0]);
-      int B = Integer.parseInt(parts[1]);
-      int C = Integer.parseInt(parts[2]);
-      bw.write((A+B)%C+ "\n");
-      bw.write(((A%C) + (B%C))%C+ "\n");
-      bw.write((A*B)%C+ "\n");
-      bw.write(((A%C) * (B%C))%C+ "\n");
-      
+      String[] parts = line.split(" "); 
+      double a = Integer.parseInt(parts[0]); //자바 나누기에서 정수는 몫만 출력
+      double b = Integer.parseInt(parts[1]); //문제는 소수점 출력을 원했으므로 타입변환이 필요
+      bw.write(a / b + ""); 
       bw.flush(); 
       br.close(); 
       bw.close();
   }
 }
-
