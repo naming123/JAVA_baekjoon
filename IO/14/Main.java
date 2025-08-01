@@ -1,20 +1,30 @@
 
 import java.io.*;
 
+
 public class Main {
   public static void main(String[] args) throws IOException {
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
       BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
       String line = br.readLine();
-      String[] parts = line.split(" ");
-      int A = Integer.parseInt(parts[0]);
-      int B = Integer.parseInt(parts[1]);
-      int C = Integer.parseInt(parts[2]);
-      bw.write((A+B)%C+ "\n");
-      bw.write(((A%C) + (B%C))%C+ "\n");
-      bw.write((A*B)%C+ "\n");
-      bw.write(((A%C) * (B%C))%C+ "\n");
       
+      String[] parts = line.split(" ");
+    
+      int a = Integer.parseInt(parts[0]);
+      int b = Integer.parseInt(parts[1]);
+      // long c = Long.parseLong(parts[2]);
+      if (a>b){
+        bw.write(">");
+      }
+        
+      else if (a<b){
+        bw.write("<");
+      }
+        
+      else{
+        bw.write("==");
+      }
+        
       bw.flush(); 
       br.close(); 
       bw.close();
