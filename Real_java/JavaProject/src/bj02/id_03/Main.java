@@ -1,4 +1,4 @@
-package id_06;
+package bj02.id_03; //https://dkswnkk.tistory.com/539
 
 import java.io.*;
 
@@ -9,22 +9,23 @@ public class Main {
         String line = br.readLine();
         String[] parts = line.split(" ");
         int A = Integer.parseInt(parts[0]);
-        int B = Integer.parseInt(parts[1]);
-        String line1 = br.readLine();
-        int C = Integer.parseInt(line1);
-        int T = A*60 + B;
-        C = T+C;
-        A=C/60;
-        B=C%60;
-        
-        if (A>24) {
-            A= A/24;
-            B=B+60;
+
+        if (100 >=A&&A >= 90) {
+            bw.write("A");
         }
-        bw.write(A+" "+B);
-
-
-
+        if (90 >A&&A >= 80) {
+            bw.write("B");
+        }
+        if (80 >A&&A >= 70) {
+            bw.write("C");
+        }
+        if (70 >A&&A >= 60) {
+            bw.write("D");
+        }
+        if (60 >A&&A >= 0) {
+            bw.write("F");
+        }
+        br.close();
         bw.flush(); 
         br.close(); 
         bw.close();

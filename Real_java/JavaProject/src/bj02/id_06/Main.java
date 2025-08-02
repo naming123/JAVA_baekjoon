@@ -1,4 +1,4 @@
-package id_05;
+package bj02.id_06;
 
 import java.io.*;
 
@@ -7,21 +7,24 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         String line = br.readLine();
-
         String[] parts = line.split(" ");
-        int H = Integer.parseInt(parts[0]);
-        int M = Integer.parseInt(parts[1]);
-        int T = H*60+M-45;
-        H = T / 60;
-        M = T % 60;
-        if (M<0) {
-            H= 23;
-            M=M+60;
+        int A = Integer.parseInt(parts[0]);
+        int B = Integer.parseInt(parts[1]);
+        String line1 = br.readLine();
+        int C = Integer.parseInt(line1);
+        int T = A*60 + B;
+        C = T+C;
+        A=C/60;
+        B=C%60;
+        
+        if (A>24) {
+            A= A/24;
+            B=B+60;
         }
-        bw.write(H+" "+M);
+        bw.write(A+" "+B);
 
 
-
+        br.close();
         bw.flush(); 
         br.close(); 
         bw.close();

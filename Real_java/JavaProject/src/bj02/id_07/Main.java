@@ -1,4 +1,4 @@
-package id_07;
+package bj02.id_07;
 
 import java.io.*;
 

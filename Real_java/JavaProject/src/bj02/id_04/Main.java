@@ -1,4 +1,4 @@
-package id_04;
+package bj02.id_04;
 
 import java.io.*;
 
@@ -24,7 +24,7 @@ public class Main {
             
         }else{bw.write("0");}
 
-
+        br.close();
         bw.flush(); 
         br.close(); 
         bw.close();

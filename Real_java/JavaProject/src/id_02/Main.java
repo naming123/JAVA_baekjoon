@@ -1,32 +1,23 @@
-package id_02; //https://dkswnkk.tistory.com/539
+package id_02;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        String line = br.readLine();
-        String[] parts = line.split(" ");
-        int A = Integer.parseInt(parts[0]);
-        int B = Integer.parseInt(parts[1]);  
-        if (A > B) {
-            bw.write(">"+"\n");
+        // BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        String number1 = br.readLine();
+        int number = Integer.parseInt(number1);
+        String line;
+        String[] parts;
+        for (int i=0;i<number;i++){
+            line= br.readLine();
+            parts = line.split(" ");
+            int A = Integer.parseInt(parts[0]);
+            int B = Integer.parseInt(parts[1]);
+            System.out.println(A+B);
         }
-        if (A < B) {
-            bw.write("<"+"\n");
-        }
-        if (A == B) {
-            bw.write("=="+"\n");
-        }
-
-        bw.flush(); 
-        br.close(); 
-        bw.close();
-
+        br.close();
     }
 }
