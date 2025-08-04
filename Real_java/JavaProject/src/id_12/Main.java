@@ -1,4 +1,4 @@
-package id_11;
+package id_12;
 
 import java.io.*;
 
@@ -10,10 +10,9 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         
-        while(true) { // 조건이 없더라도(추후 조건생성인 경우) 이렇게 반복 가능
-            String line = br.readLine();
-            if (line.equals("0 0")) break;  // 문자열은 ==가아니라 equals사용
-
+        String line;
+        while((line=br.readLine()) != null) { // 이거는 기본적으로 알고 있어야함
+            
             String[] parts = line.split(" ");
             int a = Integer.parseInt(parts[0]);
             int b = Integer.parseInt(parts[1]);
