@@ -12,5 +12,13 @@ public class Main {
         int A = sc.nextInt();
         // System.out.println("long "*A+"int");
         System.out.println("long ".repeat(A/4)+"int");// 이렇게 for을 안쓰더라도 반복문을 사용할 수 있다.
+        		StringBuilder sb = new StringBuilder();
+		
+		// int N = Integer.parseInt(br.readLine());
+		// br.close();
+		
+		// for(int i = 0; i < N/4; i++) {
+		// 	sb.append("long ");
+		// }     //// append 사용도 가능
     }
 }
