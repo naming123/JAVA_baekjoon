@@ -6,27 +6,35 @@ public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        String[][] input = new String[5][15];
+        int num = Integer.parseInt(br.readLine());
 
-        // 입력: 각 줄을 문자 단위로 최대 15칸까지 채움 (부족하면 null 유지)
-        for (int r = 0; r < 5; r++) {
-            String line = br.readLine();
-            if (line == null) line = "";
-            int limit = Math.min(15, line.length());  // ← 길이 방어
+        // 2차원 100 x 100배열을 만든다.
+        // if input, (input - input+9)(x,y)를 true로 만든다.
+        // num번만큼 이를 반복한다.
+        // 해당하는 값에 따라 true면 그대로, false면 true로
+        
+        boolean[][] arr = new boolean[100][100];
 
-            for (int c = 0; c < limit; c++) {
-                input[r][c] = String.valueOf(line.charAt(c));
+        for (int n = 0; n < num; n++) {
+            String[] input = br.readLine().split(" ");
+            int x = Integer.parseInt(input[0]);
+            int y = Integer.parseInt(input[1]);
 
-            }
-        }
-
-        // 출력: 열 기준(0..14), 행 거꾸로(4..0), null은 pass, 줄바꿈 없이
-        for (int c = 0; c < 15; c++) {
-            for (int r = 0; r < 5; r++) {
-                if (input[r][c] != null) {
-                    System.out.print(input[r][c]);
+            // 색종이 색칠
+            for (int i = x; i < x + 10 && i < 100; i++) {
+                for (int j = y; j < y + 10 && j < 100; j++) {
+                    arr[i][j] = true;
                 }
             }
         }
+
+        int count =0;
+        for (int a = 0; a < 100; a++) {
+            for (int b = 0; b < 100; b++) {
+                if (arr[a][b]) {
+                    count+=1;
+                }
+            }
+        }System.out.println(count);
     }
 }
