@@ -27,10 +27,7 @@ public class Main {
             sb.append(input/1);
             sb.append("\n");
         }
-        
 
-
-        // 뒤집어서 출력
         System.out.println(sb.toString());
 
     }
