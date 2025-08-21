@@ -1,4 +1,4 @@
-package bj09.id_02;
+package bj09.id_03;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class Main {
 
         ArrayList<Integer> a = new ArrayList<>();
         ArrayList<Integer> b = new ArrayList<>();
-        // System.out.println(N_r);
+        System.out.println(N_r);
         for (int i=1;i<=N_r;i++){
             if (N%i==0){
                 // Arraylist
@@ -31,9 +31,9 @@ public class Main {
         }
         // System.out.println(a.size());
         // K접근
-        if (K<=a.size()){
+        if (K<a.size()){
             System.out.println(a.get(K-1));
-        }else if (K-a.size()<=b.size()){
+        }else if (K-a.size()<b.size()){
             System.out.println(b.get(b.size()-K+a.size()));
         }else{
             System.out.println(0);
