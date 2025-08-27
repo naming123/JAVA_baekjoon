@@ -1,7 +1,7 @@
 package bj11.id_01;
 
 import java.io.*;
-
+// 점근적 표기란 시간복잡도를 말한다.
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

@@ -1,7 +1,6 @@
 // package bj08.id_02;
 
 import java.io.*;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -22,7 +21,7 @@ public class Main {
         long pow=1;
         // %를 이용해보자 (나머지구하기)
         for (int i=0; i< n; i++){
-            sum = map.get(a[0].charAt(n-i-1))*(long)Math.pow(num, i)+sum; // ^i(XOR)가 제곱이 아니라 pow를 써야한다. (이는 double을 출력하기 때문에 출력형식을 유의해야한다.)
+            // sum = map.get(a[0].charAt(n-i-1))*(long)Math.pow(num, i)+sum; // ^i(XOR)가 제곱이 아니라 pow를 써야한다. (이는 double을 출력하기 때문에 출력형식을 유의해야한다.)
             // System.out.println(num);
             // System.out.println(num^i);
             // System.out.println(a[0]);
