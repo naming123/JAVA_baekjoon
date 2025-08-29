@@ -6,37 +6,34 @@ public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        String[] pp = br.readLine().split(" ");
+        int N = Integer.parseInt(br.readLine());
 
-        int N = Integer.parseInt(pp[0]);
-        int M = Integer.parseInt(pp[1]);
-
-        String[] qq = br.readLine().trim().split("\\s+"); // 요렇게 쓰는 게 더 안정적인듯
-        
-        int sum =0;
-        int sum1 =0;
-        for (int i=0; i<N;i++){
-            for (int j=0; j<N;j++){
-                if (i==j)break;// 3장 뽑는것이므로 ijk가 달라야한다.
-                for (int k=0; k<N;k++){
-                    if (k==j)break;
-                    sum1 = Integer.parseInt(qq[i])+Integer.parseInt(qq[j])+Integer.parseInt(qq[k]);
-                    // if(sum1==M){
-                    //     System.out.println(qq[i]+" "+qq[j]+" "+qq[k]);
-                    // }
-                    
-                    if (sum1<=M&&sum1>sum){
-                        sum = sum1;
-
-                    } 
-                    // System.out.println(sum);
-
-                }
+        int ans=0;
+        for (int i=1; i<=N; i++){
+            if (isGen(i,N)>0){
+                ans=i;
+                // System.out.println(i);
             }
-        }System.out.println(sum);
-
+            if (ans>0)break;
+        }System.out.println(ans);
+        // 256 = 245 + 2 + 4 + 5
 
     }    
+
+    static int isGen(int a, int b){
+        String A = String.valueOf(a);
+        int sum = a;
+        for (int i = 0; i < A.length(); i++) {
+            int digit = A.charAt(i) - '0';  // 문자 → 숫자 변환
+            sum = digit +sum;
+        }
+        if (b==sum){
+            return a;
+        }else{
+            return 0;
+        }
+    }
+
 
 }
         
