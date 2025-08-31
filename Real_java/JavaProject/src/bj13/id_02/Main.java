@@ -15,7 +15,7 @@ public class Main {
             sum = sum +arr[i];
 
         }
-        Arrays.sort(arr);
+        Arrays.sort(arr); // 오름차순으로 정렬
 
         System.out.println(sum/5);
         System.out.println(arr[2]);
