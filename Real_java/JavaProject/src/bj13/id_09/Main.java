@@ -25,11 +25,11 @@ public class Main {
 			public int compare(String s1, String s2) {// compare라는 함수를 이용해 단어길이를 가지고 sort하는 comparator객체를 만들었다
 				// 단어 길이가 같을 경우 
 				if (s1.length() == s2.length()) {
-					return s1.compareTo(s2);
+					return s1.compareTo(s2); // 같으면 사전순으로 배열
 				} 
 				// 그 외의 경우 
 				else {
-					return s1.length() - s2.length();
+					return s1.length() - s2.length();// 양수냐 음수냐에 따라 comparator가 어떤 순으로 반환할지 정한다.
 				}
 			}
 		}); // 람다식을 사용하여 조건을 가진 sort를 할 수도 있다. 
