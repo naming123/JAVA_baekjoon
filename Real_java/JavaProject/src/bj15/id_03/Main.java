@@ -15,7 +15,9 @@ public class Main {
         int b2 = Integer.parseInt(bb[1]);
 
         int a = a1*b2+a2*b1;
-        int b =a2*b2/GCD(a2,b2);
+        System.out.println(a);
+        int b =a2*b2;
+        System.out.println(b);
 
         System.out.println(a/GCD(a,b)+" "+b/GCD(a,b));
 
