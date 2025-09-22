@@ -30,7 +30,7 @@ public class Main {
 
         // 3) 입력 처리: 각 n에 대해 (n, 2n] = primePrefix[2n] - primePrefix[n]
         while (true) {
-            int n = Integer.parseInt(br.readLine());
+            int n = Integer.parseInt( br.readLine());
             if (n == 0) break; // 0을 넣으면 끝남
 
             int ans = primePrefix[2 * n] - primePrefix[n];
