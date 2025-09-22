@@ -27,7 +27,7 @@ public class Main {
         
     }
 
-    /** 에라토스테네스의 체로 2..limit 소수 생성 */
+    // 에라토스테네스의 체
     static void sieve(int limit) {
         boolean[] isComposite = new boolean[limit + 1];
         isComposite[0] = true; 
