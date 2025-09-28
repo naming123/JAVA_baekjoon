@@ -26,27 +26,27 @@ public class Main {
     static boolean Bracky(String input) {
         boolean isValid = true;
         char[] stack = new char[input.length()];
-        int top = -1;
+        int j = -1;
 
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
 
             if (c == '(' || c == '[') {
-                stack[++top] = c;                 // push
+                stack[++j] = c;                 // push
             } else if (c == ')') {
-                if (top < 0 || stack[top--] != '(') { 
+                if (j < 0 || stack[j--] != '(') { 
                     isValid = false;
                     break;
                 }
             } else if (c == ']') {
-                if (top < 0 || stack[top--] != '[') { 
+                if (j < 0 || stack[j--] != '[') { 
                     isValid = false;
                     break;
                 }
             }
         }
 
-        return isValid && top == -1;
+        return isValid && j == -1;
     }
 
 }
