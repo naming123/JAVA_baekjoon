@@ -28,6 +28,10 @@ public class Main {
     static String controller(String[] command) {
         switch (command[0]) {
             case "push":
+                queue.add(Integer.parseInt(command[1])); 
+                return null;
+            case "pop":
+                return queue.isEmpty() ? "-1" : String.valueOf(queue.poll()); 
 
             case "size":
                 return String.valueOf(queue.size());
