@@ -1,8 +1,7 @@
 package bj16.id_07;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -13,12 +12,22 @@ public class Main {
         int st = Integer.parseInt(input[1]);
 
         // st번째 수를 보고 st만큼 다음 수를 고르고 
+        Deque<Integer> dq = new ArrayDeque<>();
+        for (int i = 1; i <= N; i++) {
+            dq.add(i);
+        }
         // 만약 st로 더했는데 N을 넘으면 N을 빼고 다시 시작
-        // 하나씩 append
-        List<Integer> list = Arrays.asList(3, 6, 2, 7, 5, 1, 4);
-        String result = list.toString().replace('[', '<').replace(']', '>');
-        System.out.println(result); 
+        List<Integer> result = new ArrayList<>();
+        while (!dq.isEmpty()) {
 
+            for (int i = 0; i < st - 1; i++) {
+                dq.addLast(dq.pollFirst());
+            }
 
+            result.add(dq.pollFirst());
+        }
+
+        String aa = result.toString().replace('[', '<').replace(']', '>');
+        System.out.println(aa); 
     }
 }
