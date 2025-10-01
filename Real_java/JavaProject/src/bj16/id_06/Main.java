@@ -28,10 +28,17 @@ public class Main {
     static String controller(String[] command) {
         switch (command[0]) {
             case "push":
+<<<<<<< HEAD
                 queue.add(Integer.parseInt(command[1])); // 맨 뒤 삽입
                 return null;
             case "pop":
                 return queue.isEmpty() ? "-1" : String.valueOf(queue.poll()); // 맨 앞 제거
+=======
+                queue.add(Integer.parseInt(command[1])); 
+                return null;
+            case "pop":
+                return queue.isEmpty() ? "-1" : String.valueOf(queue.poll()); 
+>>>>>>> e528c22 (1001)
             case "size":
                 return String.valueOf(queue.size());
             case "empty":
