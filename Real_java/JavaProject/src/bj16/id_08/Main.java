@@ -4,47 +4,30 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    static Deque<String> dq = new ArrayDeque<>();
-    // array로도 선언할 수 있고, => 빠름
-    // linkedlist로도 선언할 수 있다. => 중간 삽입/삭제에 유리
+
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        int N = Integer.parseInt(br.readLine());
-        for(int i=0;i<N;i++ ){
-            String[] command = br.readLine().split(" ");
-            String a = controller(command);
-            if (a!=null)bw.write(a+"\n"); 
-        }
-        bw.flush();
-        bw.close();
-    }
+        String[] input = br.readLine().split(" ");
+        int N = Integer.parseInt(input[0]);
+        int st = Integer.parseInt(input[1]);
 
-
-    static String controller(String[] command) {
-        switch (command[0]) {
-            case "1": // 삽입
-                dq.addFirst(command[1]); 
-                return null;
-            case "2":
-                dq.addLast(command[1]); 
-                return null;
-            case "3": // pop = poll
-                return dq.isEmpty() ? "-1" : dq.pollFirst();
-            case "4":
-                return dq.isEmpty() ? "-1" : dq.pollLast();
-            case "5": // 개수
-                return String.valueOf(dq.size());
-            case "6": // empty
-                return dq.isEmpty() ? "1" : "0";
-            case "7": // 있는지?(peek)
-                return dq.isEmpty() ? "-1" : dq.peekFirst();
-            case "8":
-                return dq.isEmpty() ? "-1" : dq.peekLast();
-            default:
-                return null;
+        // st번째 수를 보고 st만큼 다음 수를 고르고 
+        Deque<Integer> dq = new ArrayDeque<>();
+        for (int i = 1; i <= N; i++) {
+            dq.add(i);
         }
+        // 만약 st로 더했는데 N을 넘으면 N을 빼고 다시 시작
+        List<Integer> result = new ArrayList<>();
+        while (!dq.isEmpty()) {
+            // st-1번 만큼 앞으로 돌림
+            for (int i = 0; i < st - 1; i++) {
+                dq.addLast(dq.pollFirst());
+            }
+            // st번째 원소 제거
+            result.add(dq.pollFirst());
+        }
+
+        String aa = result.toString().replace('[', '<').replace(']', '>');
+        System.out.println(aa); 
     }
 }
-
-            

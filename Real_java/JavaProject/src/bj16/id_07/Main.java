@@ -1,33 +1,30 @@
 package bj16.id_07;
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] input = br.readLine().split(" ");
-        int N = Integer.parseInt(input[0]);
-        int st = Integer.parseInt(input[1]);
-
-        // st번째 수를 보고 st만큼 다음 수를 고르고 
-        Deque<Integer> dq = new ArrayDeque<>();
+        
+        int N = Integer.parseInt(br.readLine());
+        int cnt =N;
+        // 단계별의 주제가 스택 큐 덱인데 스택 큐는 아닌거 같아서 덱을 썼다
+        Deque<Integer> q = new ArrayDeque<>(N);
         for (int i = 1; i <= N; i++) {
-            dq.add(i);
+            q.addLast(i);
         }
-        // 만약 st로 더했는데 N을 넘으면 N을 빼고 다시 시작
-        List<Integer> result = new ArrayList<>();
-        while (!dq.isEmpty()) {
+        while(cnt!=1){
+            // step 1
+            q.pollFirst(); 
+            cnt=cnt-1;
 
-            for (int i = 0; i < st - 1; i++) {
-                dq.addLast(dq.pollFirst());
-            }
+            // step 2
+            q.addLast(q.pollFirst());  
 
-            result.add(dq.pollFirst());
         }
-
-        String aa = result.toString().replace('[', '<').replace(']', '>');
-        System.out.println(aa); 
+        System.out.println(q.peekFirst());
     }
 }
