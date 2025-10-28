@@ -2,8 +2,8 @@ package bj21.id_01;
 import java.io.*;
 
 public class Main {
-    static int code1 = 0;  // 재귀 호출 횟수
-    static int code2 = 0;  // DP 실행 횟수
+    static int a = 0;  // 재귀 호출 횟수
+    static int b = 0;  // DP 실행 횟수
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -13,7 +13,7 @@ public class Main {
         fib(n);
         fibonacci(n);
 
-        bw.write(code1 + " " + code2 + "\n");
+        bw.write(a + " " + b + "\n");
         bw.flush();
         bw.close();
         br.close();
@@ -22,7 +22,7 @@ public class Main {
     // 재귀 방식
     static int fib(int n) {
         if (n == 1 || n == 2) {
-            code1++;
+            a++;
             return 1;
         } else {
             return fib(n - 1) + fib(n - 2);
@@ -36,7 +36,7 @@ public class Main {
         f[2] = 1;
         for (int i = 3; i <= n; i++) {
             f[i] = f[i - 1] + f[i - 2];
-            code2++;
+            b++;
         }
         return f[n];
     }
