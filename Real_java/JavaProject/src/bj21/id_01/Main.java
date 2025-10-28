@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Main {
     static int a = 0;  // 재귀 호출 횟수
-    static int b = 0;  // DP 실행 횟수
+    static int b = 0;  // 반복문
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
